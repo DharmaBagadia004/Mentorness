@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Customer Churn Prediction</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="app.js"></script>
+        <link rel="stylesheet" href="app.css" />
+    </head>
+
+    <body>
+        <div class="img"></div>
+        <form class="form" id="churnForm">
+            <div style="
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        ">
+                <div>
+                    <h2>Gender</h2>
+                    <div>
+                        <select class="gender" name="gender" id="uigender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <h2>Senior Citizen</h2>
+                    <div class="switch-field">
+                        <input type="radio" id="radio-senior-1" name="uiSenior" value="1" />
+                        <label for="radio-senior-1">Yes</label>
+                        <input type="radio" id="radio-senior-2" name="uiSenior" value="0" />
+                        <label for="radio-senior-2">No</label>
+                    </div>
+                    <h2>Partner</h2>
+                    <div class="switch-field">
+                        <input type="radio" id="radio-partner-1" name="uipartner" value="1" />
+                        <label for="radio-partner-1">Yes</label>
+                        <input type="radio" id="radio-partner-2" name="uipartner" value="0" />
+                        <label for="radio-partner-2">No</label>
+                    </div>
+                    <h2>Dependents</h2>
+                    <div class="switch-field">
+                        <input type="radio" id="radio-dependents-1" name="uidependents" value="1" />
+                        <label for="radio-dependents-1">Yes</label>
+                        <input type="radio" id="radio-dependents-2" name="uidependents" value="0" />
+                        <label for="radio-dependents-2">No</label>
+                    </div>
+                    <h2>Tenure</h2>
+                    <div class="switch-field">
+                        <input type="radio" id="radio-tenure-1" name="uitenure" value="1" />
+                        <label for="radio-tenure-1">Yes</label>
+                        <input type="radio" id="radio-tenure-2" name="uitenure" value="0" />
+                        <label for="radio-tenure-2">No</label>
+                    </div>
+                    <h2>Phoneservice</h2>
+                    <div class="switch-field">
+                        <input type="radio" id="radio-phoneservice-1" name="uiphoneservice" value="1" />
+                        <label for="radio-phoneservice-1">Yes</label>
+                        <input type="radio" id="radio-phoneservice-2" name="uiphoneservice" value="0" />
+                        <label for="radio-phoneservice-2">No</label>
+                    </div>
+                    <h2>Multiple Lines</h2>
+                    <div class="switch-field">
+                        <input type="radio" id="radio-multiplelines-1" name="uimultiplelines" value="1" />
+                        <label for="radio-multiplelines-1">Yes</label>
+                        <input type="radio" id="radio-multiplelines-2" name="uimultiplelines" value="0" />
+                        <label for="radio-multiplelines-2">No</label>
+                    </div>
+                </div>
+                <div style="padding: 12%">
+                    <h2>Online Security</h2>
+                    <div class="switch-field">
+                        <input type="radio" id="radio-onlinesecurity-1" name="uionlinesecurity" value="1" />
+                        <label for="radio-onlinesecurity-1">Yes</label>
+                        <input type="radio" id="radio-onlinesecurity-2" name="uionlinesecurity" value="0" />
+                        <label for="radio-onlinesecurity-2">No</label>
+                    </div>
+                    <h2>Online Backup</h2>
+                    <div class="switch-field">
+                        <input type="radio" id="radio-onlinebackup-1" name="uionlinebackup" value="1" />
+                        <label for="radio-onlinebackup-1">Yes</label>
+                        <input type="radio" id="radio-onlinebackup-2" name="uionlinebackup" value="0" />
+                        <label for="radio-onlinebackup-2">No</label>
+                    </div>
+
+                    <h2>Device Protection</h2>
+                    <div class="switch-field">
+                        <input type="radio" id="radio-deviceprotection-1" name="uideviceprotection" value="1" />
+                        <label for="radio-deviceprotection-1">Yes</label>
+                        <input type="radio" id="radio-deviceprotection-2" name="uideviceprotection" value="0" />
+                        <label for="radio-deviceprotection-2">No</label>
+                    </div>
+                    <h2>Tech Support</h2>
+                    <div class="switch-field">
+                        <input type="radio" id="radio-techsupport-1" name="uitechsupport" value="1" />
+                        <label for="radio-techsupport-1">Yes</label>
+                        <input type="radio" id="radio-techsupport-2" name="uitechsupport" value="0" />
+                        <label for="radio-techsupport-2">No</label>
+                    </div>
+                    <h2>Streaming TV</h2>
+                    <div class="switch-field">
+                        <input type="radio" id="radio-streamingtv-1" name="uistreamingtv" value="1" />
+                        <label for="radio-streamingtv-1">Yes</label>
+                        <input type="radio" id="radio-streamingtv-2" name="uistreamingtv" value="0" />
+                        <label for="radio-streamingtv-2">No</label>
+                    </div>
+                </div>
+                <div>
+                    <h2>Streaming Movies</h2>
+                    <div class="switch-field">
+                        <input type="radio" id="radio-streamingmovies-1" name="uistreamingmovies" value="1" />
+                        <label for="radio-streamingmovies-1">Yes</label>
+                        <input type="radio" id="radio-streamingmovies-2" name="uistreamingmovies" value="0" />
+                        <label for="radio-streamingmovies-2">No</label>
+                    </div>
+                    <h2>Paperless Billing</h2>
+                    <div class="switch-field">
+                        <input type="radio" id="radio-paperlessbilling-1" name="uipaperlessbilling" value="1" />
+                        <label for="radio-paperlessbilling-1">Yes</label>
+                        <input type="radio" id="radio-paperlessbilling-2" name="uipaperlessbilling" value="0" />
+                        <label for="radio-paperlessbilling-2">No</label>
+                    </div>
+
+                    <div style="padding: 12%;">
+                        <!-- Input fields continued -->
+
+                        <h2>Monthly Charges</h2>
+                        <input class="area" type="text" id="uimonthlycharges" name="monthlycharges" value="100">
+
+                        <h2>Total Charges</h2>
+                        <input class="area" type="text" id="uitotalcharges" name="totalcharges" value="1000">
+
+                        <h2>Internet Service</h2>
+                        <div>
+                            <select class="internetservice" name="internetservice" id="uiinternetservice">
+                                <option value="" disabled="disabled">Choose a Internet Service</option>
+                            </select>
+                        </div>
+
+                        <h2>Contract</h2>
+                        <div>
+                            <select class="contract" name="contract" id="uicontract">
+                                <option value="" disabled="disabled">Choose a Contract</option>
+                            </select>
+                        </div>
+
+                        <h2>Payment Method</h2>
+                        <div>
+                            <select class="paymentmethod" name="paymentmethod" id="uipaymentmethod">
+                                <option value="" disabled="disabled">Choose Payment Method</option>
+                            </select>
+                        </div>
+
+                        <button class="submit" type="button" onclick="onClickedCustomerChurn()">Churn</button>
+                        <div id="uiEstimatedPrice" class="result">
+                            <h2></h2>
+                        </div>
+                    </div>
+                </div>
+        </form>
+    </body>
+</html>
